@@ -1,3 +1,45 @@
-theme: jekyll-theme-midnight
-title: Yuriy Bogomolov's personal blog
-show_downloads: false
+# Site
+name: "ybogomolov.me"
+description: "Yuriy Bogomolov's personal blog"
+meta_description: "Yuriy Bogomolov's personal blog"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: /
+disqus: 'demowebsite'
+include: ["_pages"]
+permalink: /:title/
+
+# Authors
+authors:
+  sal:
+    name: Yuriy
+    display_name: Yuriy Bogomolov
+    gravatar: e56154546cf4be74e393c62d1ae9f9d4
+    email: yuriy.bogomolov@gmail.com
+    web: https://ybogomolov.me
+    twitter: https://twitter.com/YuriyBogomolov
+    description: "Functional programmer, speaker & author"
+
+# Plugins
+plugins: 
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+    
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 6
+paginate_path: /page:num/
+    
+# Other
+markdown: kramdown
+highlighter: rouge

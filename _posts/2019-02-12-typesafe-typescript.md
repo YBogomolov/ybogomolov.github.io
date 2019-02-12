@@ -1,4 +1,10 @@
-# Typesafe Frontend Development
+---
+layout: post
+title:  "Typesafe Frontend Development"
+author: Yuriy
+categories: [ fp, typescript, typelevel ]
+image: assets/images/16.jpg
+---
 
 ## Preface
 
