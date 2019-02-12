@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Typesafe Frontend Development"
-author: Yuriy
+author: yuriy
 categories: [ fp, typescript, typelevel ]
 image: assets/images/16.jpg
 ---
