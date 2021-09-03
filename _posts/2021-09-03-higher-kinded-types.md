@@ -19,7 +19,7 @@ When it comes to functional programming, JS developers _usually_ stop at composi
 
 Let's take a look at the familiar and well-studied *array*. An array, like a list, is a data structure that expresses the idea of ​​non-determinism: it can store from 0 to N elements of a certain type A. Moreover, if we have a function of the form `A -> B`, we can “ask” this array to apply it by calling the `.map ()` method, yielding an array of the same size with elements of type B in the same order as in the original array:
 
-```cs
+```typescript
 const as = [1, 2, 3, 4, 5, 6]; // as :: number[]
 const f = (a: number): string => a.toString();
 
@@ -29,7 +29,7 @@ console.log(bs); // => [ '1', '2', '3', '4', '5', '6' ]
 
 Let's do a mental experiment. Let's move the `map` function from the array prototype into a separate interface. As a result, we get a higher-order function polymorphic by the type of the input and output types, which I will immediately make curried for ease of further reading:
 
-```cs
+```typescript
 interface MappableArray {
   readonly map: <A, B>(f: (a: A) => B) => (as: A[]) => B[];
 }
@@ -37,7 +37,7 @@ interface MappableArray {
 
 Everything seems to be fine. But if we continue our mental experiment and start looking at other data structures, we will very quickly realize that the `map` function can be implemented for a `Set`, or a hash table (`Map`), or a tree, or a stack, or... A lot of things, in general. Let's see how the signatures of the `map` functions for the mentioned data structures will change:
 
-```cs
+```typescript
 type MapForSet   = <A, B>(f: (a: A) => B) => (as: Set<A>) => Set<B>;
 type MapForMap   = <A, B>(f: (a: A) => B) => (as: Map<FixedKeyType, A>) => Map<FixedKeyType, B>;
 type MapForTree  = <A, B>(f: (a: A) => B) => (as: Tree<A>) => Tree<B>;
@@ -46,7 +46,7 @@ type MapForStack = <A, B>(f: (a: A) => B) => (as: Stack<A>) => Stack<B>;
 
 I think you have already seen the general pattern and are thinking: how can you abstract from the data structure and write a generalized interface `Mappable`? For such abstraction to be possible, it is necessary for the language to fully support higher-order kinds, i.e. to be able to abstract from type constructors. Translating into TypeScript terminology, you need to be able to write an interface that can accept other generic types as generic arguments:
 
-```cs
+```typescript
 interface Mappable<F> {
   // Type 'F' is not generic. ts(2315)
   readonly map: <A, B>(f: (a: A) => B) => (as: F<A>) => F<B>;
@@ -66,7 +66,7 @@ So, we want to express the following idea: there is a generic type `Mappable`, w
 
 Let's see how it looks in practice:
 
-```cs
+```typescript
 interface URItoKind<A> {
   'Array': Array<A>;
 } // a dictionary for 1-arity types: Array, Set, Tree, Promise, Maybe, Task...
@@ -85,7 +85,7 @@ type Kind2<F extends URIS2, A> = URItoKind2<A>[F];
 
 The only thing left to do is to give any programmer the opportunity to extend the `URItoKindN` dictionaries, and not rely on the authors of the library in which this technique is used. This is where a great TypeScript feature comes to the rescue — [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation). With this feature it'll be enough for us to place the code with defunctionalized kinds in the main library, and from the custom code, the definition of a higher-order type will be simple:
 
-```cs
+```typescript
 type Tree<A> = ...
 
 declare module 'my-lib/path/to/uri-dictionaries' {
@@ -101,7 +101,7 @@ type Test1 = Kind<'Tree', string> // will be inferred as Tree<string>
 
 Now we can define our Mappable type — polymorphically for any 1-ary constructors, and implement instances of it for different data structures:
 
-```cs
+```typescript
 interface Mappable<F extends URIS> {
   readonly map: <A, B>(f: (a: A) => B) => (as: Kind<F, A>) => Kind<F, B>;
 }
