@@ -407,7 +407,7 @@ Either has a twin brother — Validation. This is exactly the same sum type, in 
 
 Such structures form a hierarchy:
 
-* [Magma](https://github.com/gcanti/fp-ts/blob/master/src/Magma.ts), or groupid — basic type class which defines an operation `concat :: (a: A, b: A) => A`. This operation is not restricted.
+* [Magma](https://github.com/gcanti/fp-ts/blob/master/src/Magma.ts), or groupoid — basic type class which defines an operation `concat :: (a: A, b: A) => A`. This operation is not restricted.
 * If we add associativity restriction for `concat`, we'll get a [Semigroup](https://github.com/gcanti/fp-ts/blob/master/src/Semigroup.ts). In real usage they are more useful than magmas, as most of the times we have to deal with structures having significant element order — like arrays of trees.
 * If we add a unit (value which can be summoned out of thin air) to semigroup, we'll get a [Monoid](https://github.com/gcanti/fp-ts/blob/master/src/Monoid.ts).
 * Finally, if we add an `inverse :: (a: A) => A` operation, which allows getting an inverse for an arbitrary value, we'll get [Group](https://github.com/gcanti/fp-ts/blob/master/src/Group.ts).
