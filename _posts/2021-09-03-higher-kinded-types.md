@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Intro to fp-ts: Higher-Kinded Types"
+title:  "Intro to fp-ts, part 1: Higher-Kinded Types"
 author: yuriy
 categories: [ fp, typescript, higher-kinded ]
 image: assets/images/17.jpg
