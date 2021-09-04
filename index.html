@@ -3,18 +3,19 @@ layout: default
 title: Home
 ---
 
+{% assign featured_posts = site.posts | where: "featured" %}
+
 {% if page.url == "/" %}
 
 <!-- Featured
 ================================================== -->
-    {% assign have_featured_posts = site.posts | where: "featured" %}
-    {% if have_featured_posts.size > 0 %}
+    {% if featured_posts.size > 0 %}
 <section class="featured-posts">
     <div class="section-title">
         <h2><span>Featured</span></h2>
     </div>
     <div class="row">
-        {% for post in have_featured_posts %}
+        {% for post in featured_posts %}
             {% include featuredbox.html %}
         {% endfor %}
     </div>
