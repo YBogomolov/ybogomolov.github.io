@@ -289,7 +289,7 @@ License: https://www.wowthemes.net/freebies-license/
 }
  @media (min-width:1024px) {
      .share {
-         position:fixed;
+         /* position:fixed; */
          display:block;
     }
      .share ul li {
