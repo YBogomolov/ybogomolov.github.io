@@ -43,3 +43,5 @@ paginate_path: /page:num/
 # Other
 markdown: kramdown
 highlighter: rouge
+
+excerpt_separator: <!--more-->

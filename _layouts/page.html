@@ -9,7 +9,7 @@ layout: default
     </div>
     
     <div class="article-post">
-    {{content}}
+    {{ content | remove_first:page.excerpt}}
     </div>
     
     {% if page.comments == true %}

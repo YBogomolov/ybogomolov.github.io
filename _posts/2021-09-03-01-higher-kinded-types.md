@@ -7,6 +7,9 @@ image: assets/images/17.jpg
 featured: true
 ---
 
+In the first post of the series "Intro to fp-ts" I'll take a look at the concept of higher-kinded types, and how to implement them in TypeScript using lightweight higher-kinded polymorphism.
+
+<!--more-->
 
 I'm Yuriy Bogomolov, and you (probably) may know me from my work on the [#MonadicMondays](http://twitter.com/hashtag/monadicmonday) series on Twitter, by my [YouTube channel](https://youtube.com/c/Cronuscpp) or my articles on [Medium](https://medium.com/tag/monadicmonday/archive) or [dev.to](https://dev.to/ybogomolov). In the Russian-speaking segment of the Internet there is very little information on functional programming in TypeScript and one of the best ecosystems for this language — the [fp-ts](https://gcanti.github.io/fp-ts/) library, in whose ecosystem I've quite actively contributed some time ago. With this article I want to start a story about FP in TypeScript.
 
