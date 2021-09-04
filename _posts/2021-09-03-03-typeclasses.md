@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Intro to fp-ts, part 2: Type Class Pattern"
+title:  "Intro to fp-ts, part 3: Option and Either"
 author: yuriy
 categories: [ fp, typescript, typeclass ]
 image: assets/images/15.jpg
