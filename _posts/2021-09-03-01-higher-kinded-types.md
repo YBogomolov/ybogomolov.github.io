@@ -4,7 +4,6 @@ title:  "Intro to fp-ts, part 1: Higher-Kinded Types"
 author: yuriy
 categories: [ fp, typescript, higher-kinded ]
 image: assets/images/17.jpg
-featured: true
 ---
 
 In the first post of the series "Intro to fp-ts" I'll take a look at the concept of higher-kinded types, and how to implement them in TypeScript using lightweight higher-kinded polymorphism.
