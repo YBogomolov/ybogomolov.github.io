@@ -6,6 +6,10 @@ categories: [ fp, typescript, typelevel ]
 image: assets/images/16.jpg
 ---
 
+In this article I'll give a quick overview of some of the most useful functional programming concepts for front-end development.
+
+<!--more-->
+
 ## Preface
 
 Tony Hoare at QCon'09 [apologized](http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare) for creating the most disasterous invention in computer science – `null reference exception`:
