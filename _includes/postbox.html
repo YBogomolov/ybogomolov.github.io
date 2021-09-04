@@ -14,7 +14,7 @@
                 <div class="clearfix"></div>
             </div>
             <h2 class="card-title"><a class="text-dark" href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-            <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 }}</h4>            
+            <h4 class="card-text">{{ post.excerpt | strip_html }}</h4>            
         </div>
     </div>
 </div>
