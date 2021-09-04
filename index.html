@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-{% assign featured_posts = site.posts | where: "featured" %}
+{% assign featured_posts = site.posts %}
 
 {% if page.url == "/" %}
 
@@ -16,7 +16,9 @@ title: Home
     </div>
     <div class="row">
         {% for post in featured_posts %}
+          {% if post.featured == true %}
             {% include featuredbox.html %}
+          {% endif %}
         {% endfor %}
     </div>
 </section>
