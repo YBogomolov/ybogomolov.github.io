@@ -6,6 +6,10 @@ categories: [ fp, typescript, typeclass ]
 image: assets/images/15.jpg
 ---
 
+In the third post of the series "Intro to fp-ts" I'll demonstrate two widely-used functional concepts — Option and Either, and show how they substitute nullables and exceptions.
+
+<!--more-->
+
 Previous articles:
 1. [Higher-Kinded Types](https://ybogomolov.me/01-higher-kinded-types/)
 
