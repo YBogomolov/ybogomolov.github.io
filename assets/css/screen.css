@@ -664,3 +664,8 @@ License: https://www.wowthemes.net/freebies-license/
 .sticky-top-80 {
     top:80px;
 }
+
+.text-logo {
+    font-family: Righteous;
+    font-size: 1.8rem;   
+}
