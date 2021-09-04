@@ -27,6 +27,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+    <meta property="og:title" content="{{ page.title }}" />
+    {% if page.image %}
+    <meta property="og:image" content="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" />
+    {% endif %}
+    <meta property="og:description" content="{{ page.title }}" />
+    <meta property="og:url" content="{{ post.url | absolute_url }}" />
 </head>
 
 {% if jekyll.environment == 'production' %}
