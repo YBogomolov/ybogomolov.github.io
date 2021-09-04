@@ -8,6 +8,7 @@ baseurl: /
 disqus: 'demowebsite'
 include: ["_pages"]
 permalink: /:title/
+google_analytics: G-N46PTJBXLE
 
 # Authors
 authors:
