@@ -31,8 +31,6 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-archives (2.1.1)
       jekyll (>= 2.4)
-    jekyll-environment-variables (1.0.1)
-      jekyll (>= 3.0, < 5.x)
     jekyll-feed (0.11.0)
       jekyll (~> 3.3)
     jekyll-paginate (1.1.0)
@@ -74,7 +72,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll-archives
-  jekyll-environment-variables
   jekyll-feed
   jekyll-paginate
   jekyll-seo-tag
