@@ -8,7 +8,6 @@ baseurl: /
 disqus: 'demowebsite'
 include: ["_pages"]
 permalink: /:title/
-google_analytics: G-N46PTJBXLE
 
 # Authors
 authors:
@@ -23,6 +22,7 @@ authors:
 
 # Plugins
 plugins: 
+ - jekyll-environment-variables
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
