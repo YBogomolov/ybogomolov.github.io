@@ -22,7 +22,7 @@ authors:
 
 # Plugins
 plugins: 
- - jekyll-environment-variables
+  - jekyll-environment-variables
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
