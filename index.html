@@ -3,6 +3,19 @@ layout: default
 title: Home
 ---
 
+<div class="col-xxl-8">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
+        <div class="col-4 d-none d-md-block">
+        <img src="{{ site.baseurl}}/assets/images/Me16.jpg" class="d-block mx-lg-auto img-fluid rounded-circle" alt="Yuriy Bogomolov" width="300" height="300" loading="lazy">
+        </div>
+        <div class="col-12 col-md-8">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Yuriy Bogomolov's personal blog</h1>
+        <p class="lead">Hello, and welcome to my personal blog! I am a programmer passionate about functional programming, type theory and category theory.</p>
+        <p class="lead">I blog about functional programming in TypeScript, <a href="https://getmentor.dev/mentor/yuriy-bogomolov-452">perform mentoring</a> of developers who would like to study practical FP, and provide consultancy and architecture review for enterprises.</p>
+        </div>
+    </div>
+</div>
+
 {% assign featured_posts = site.posts | where:"featured",true %}
 
 {% if page.url == "/" %}
