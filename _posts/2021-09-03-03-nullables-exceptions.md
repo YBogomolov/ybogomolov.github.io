@@ -2,7 +2,7 @@
 layout: post
 title:  "Intro to fp-ts, part 3: Option and Either"
 author: yuriy
-categories: [ fp, typescript, typeclass ]
+categories: [ fp, typescript, nullable, exception, error handling ]
 image: assets/images/15.jpg
 ---
 
