@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Typesafe Frontend Development"
+title:  "Circuit Breaker in a Functional World"
 author: yuriy
 categories: [ fp, typescript, circuit breaker, architecture ]
 image: assets/images/5.jpg
