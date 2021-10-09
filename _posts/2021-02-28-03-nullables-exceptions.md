@@ -11,7 +11,8 @@ In the third post of the series "Intro to fp-ts" I'll demonstrate two widely-use
 <!--more-->
 
 Previous articles:
-1. [Higher-Kinded Types](https://ybogomolov.me/01-higher-kinded-types/)
+1. [Higher-Kinded Types](https://ybogomolov.me/01-higher-kinded-types)
+2. [Type Classes](https://ybogomolov.me/02-type-classes)
 
 ---
 
