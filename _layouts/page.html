@@ -7,12 +7,12 @@ layout: default
     <div class="section-title">
         <h2><span>{{ page.title }}</span></h2>
     </div>
-    
+
     <div class="article-post">
-    {{ content | remove_first:page.excerpt}}
+        {{ content | remove_first:page.excerpt}}
     </div>
-    
-    {% if page.comments == true %}
+
+    <!-- {% if page.comments == true %}
     
     <div id="comments" class="row mb-5">
         <div class="col-md-8">              
@@ -20,6 +20,6 @@ layout: default
         </div>
     </div>
     
-    {% endif %}
-    
+    {% endif %} -->
+
 </section>
