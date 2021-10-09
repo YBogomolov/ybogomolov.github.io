@@ -8,19 +8,19 @@ post_class: post-template
 <!-- Begin Article
 ================================================== -->
 <div class="container">
-	<div class="row">
+    <div class="row">
 
-		<!-- Post Share -->
-		<div class="col-md-2 pl-0">            
-           {% include share.html %}  
-		</div>
-		
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            {% include share.html %}
+        </div>
 
-		<!-- Post -->        
+
+        <!-- Post -->
         {% assign author = site.authors[page.author] %}
-        
-		<div class="col-md-9 flex-first flex-md-unordered">
-			<div class="mainheading">
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
 
                 <!-- Author Box -->
                 <!-- {% if page.author %}				
@@ -34,76 +34,82 @@ post_class: post-template
 					</div>
 				</div>				
                 {% endif %} -->
-                
+
                 <!-- Post Title -->
-				<h1 class="posttitle">{{ page.title }}</h1> 
-                
-			</div>
+                <h1 class="posttitle">{{ page.title }}</h1>
 
-			<!-- Post Featured Image -->
-			{% if page.image %}<img class="featured-image img-fluid" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="{{ page.title }}">{% endif %}
-			<!-- End Featured Image -->
+            </div>
 
-			<!-- Post Content -->
-			<div class="article-post">
-				{{ content | remove_first:page.excerpt}}
-			</div>
+            <!-- Post Featured Image -->
+            {% if page.image %}<img class="featured-image img-fluid" src="{% if page.image contains " ://" %}{{
+                page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="{{ page.title }}">{% endif %}
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                {{ content | remove_first:page.excerpt}}
+            </div>
 
             <!-- Post Date -->
             <p>
-            <small>
-                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
-                {% if page.last_modified_at %}
-                (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
-                {% endif %}
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="{{ page.date | date:" %Y-%m-%d" }}">{{
+                            page.date | date_to_string }}</time></span>
+                    {% if page.last_modified_at %}
+                    (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}"
+                        itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+                    {% endif %}
                 </small>
             </p>
-            
-			<!-- Post Categories -->
-			<div class="after-post-tags">
-				<ul class="tags">
+
+            <!-- Post Categories -->
+            <div class="after-post-tags">
+                <ul class="tags">
                     {% assign sortedCategories = page.categories | sort %}
                     {% for category in sortedCategories %}
-                    <li>                        
-                     <a class="smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a>
+                    <li>
+                        <a class="smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{
+                            category }}</a>
                     </li>
                     {% endfor %}
-				</ul>
-			</div>
-			<!-- End Categories -->
-            
-            <!-- Prev/Next -->
-            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
-            {% if page.previous.url %}
-            <a class="prev d-block col-md-6" href="{{page.previous.url | absolute_url}}"> &laquo; {{page.previous.title}}</a>
-            {% endif %}
-            {% if page.next.url %}
-            <a class="next d-block col-md-6 text-lg-right" href="{{page.next.url | absolute_url}}">{{page.next.title}} &raquo; </a>
-            {% endif %}
-            <div class="clearfix"></div>
+                </ul>
             </div>
             <!-- End Categories -->
 
-		</div>
-		<!-- End Post -->
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                {% if page.previous.url %}
+                <a class="prev d-block col-md-6" href="{{page.previous.url | absolute_url}}"> &laquo;
+                    {{page.previous.title}}</a>
+                {% endif %}
+                {% if page.next.url %}
+                <a class="next d-block col-md-6 text-lg-right"
+                    href="{{page.next.url | absolute_url}}">{{page.next.title}} &raquo; </a>
+                {% endif %}
+                <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
 
-	</div>
+        </div>
+        <!-- End Post -->
+
+    </div>
 </div>
 <!-- End Article
 ================================================== -->
 
-  
+
 
 <!-- Begin Comments
 ================================================== -->
-{% if page.comments != false %}
-    <div class="container">
-        <div id="comments" class="row justify-content-center mb-5">
-            <div class="col-md-8">              
-                {% include disqus.html %}                
-            </div>
+{% if page.comments == true %}
+<div class="container">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            {% include disqus.html %}
         </div>
     </div>
+</div>
 {% endif %}
 <!--End Comments
 ================================================== -->
