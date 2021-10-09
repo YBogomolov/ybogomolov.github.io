@@ -103,7 +103,7 @@ When you realise that it would be better to store comments in a tree and not in 
 
 Instead you can use the approach with type classes, and structure your code in a different manner:
 
-```typescript
+```tsx
 interface ToComponent<A> {
   readonly render: (element: A) => Component;
 }
@@ -145,7 +145,6 @@ In general, the use of type classes as a design pattern in TypeScript can be des
 3. To distinguish an instance of type classes from ordinary function arguments, it makes sense to name them in `UPPER_SNAKE_CASE`, so that their use is conspicuous against the `camelCase` background in the rest of the code. It is clear that this works well if you write idiomatically — if your code is `$tyled_like_php`, then you should come up with your own notation.
 
 ## Some useful type classes
-## Некоторые полезные классы типов
 
 The `fp-ts` library provides a lot of type classes that it makes sense to understand if you want to understand the approaches of mature FP.
 
