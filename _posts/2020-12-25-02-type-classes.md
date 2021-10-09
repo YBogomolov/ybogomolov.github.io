@@ -26,6 +26,7 @@ Type class as a concept came from Haskell, and was introduced by [Philip Wadler 
   
   In this article I'll give a simplified explanation of type class concept, without going into details about instances dictionary, instance conflict resolution or type inference rules, all of which occur in Haskell and Scala. But we're talking TypeScript (and JavaScript as its runtime) here, and must keep in mind that its type system is way more simpler than Haskell's or Scala's. It lacks implicit arguments passing to functions (except `this`), so everything below will resemble GHC Core language, where type classes are passed to functions as explicit arguments.
 </details>
+<br />
 
 Consider, as an example, one of the simplest type classes, `Show`, that defines a cast to a string. It is defined in the module `fp-ts/Show`:
 
