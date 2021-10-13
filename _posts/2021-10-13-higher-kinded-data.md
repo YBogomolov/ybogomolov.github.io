@@ -127,8 +127,10 @@ const sequenceS: <F, A, B, C, ...>(
 ```
 
 To put it even more simply, `sequenceT`/`sequenceS` "swap" the type of `F` and type of tuple/record inside out:
+
 - we had a tuple of `F`s → we get a `F` of a tuple,
 - we had a record of `F`s → we get a `F` of a record.
+
 </details>
 <br />
 
