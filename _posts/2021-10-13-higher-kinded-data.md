@@ -107,32 +107,26 @@ const validateOrder = (inputOrder: OrderOption): option.Option<Order> =>
   pipe(inputOrder, apply.sequenceS(option.Apply));
 ```
 
-<details>
-  <summary>A short explanation of `sequenceS` and `sequenceT`</summary>
-  
-For those who hasn't worked with `sequenceS` and `sequenceT` functions from `fp-ts/Apply` module before, here's a short explanation. Both `sequenceX` functions work with a colleciton of wrapped into some computation context `F` values — `sequenceT` works with tuples, `sequenceS` works with records, — and return a combined value wrapped in the same context `F`:
-
-```ts
-// Again, in imaginary simplified syntax:
-const sequenceT: <F, A, B, C, ...>(
-  fa: F<A>, 
-  fb: F<B>, 
-  fc: F<C>, 
-  ...
-) => F<[A, B, C, ...]>;
-
-const sequenceS: <F, A, B, C, ...>(
-  fs: { [fieldA]: F<A>, [fieldB]: F<B>, [fieldC]: F<C>, ... }
-) => F<{ [fieldA]: A, [fieldB]: B, [fieldC]: C, ... }>;
-```
-
-To put it even more simply, `sequenceT`/`sequenceS` "swap" the type of `F` and type of tuple/record inside out:
-
-- we had a tuple of `F`s → we get a `F` of a tuple,
-- we had a record of `F`s → we get a `F` of a record.
-
-</details>
-<br />
+> For those who hasn't worked with `sequenceS` and `sequenceT` functions from `fp-ts/Apply` module before, here's a short explanation. Both `sequenceX` functions work with a colleciton of wrapped into some computation context `F` values — `sequenceT` works with tuples, `sequenceS` works with records, — and return a combined value wrapped in the same context `F`:
+> 
+> ```ts
+> // Again, in imaginary simplified syntax:
+> const sequenceT: <F, A, B, C, ...>(
+>   fa: F<A>, 
+>   fb: F<B>, 
+>   fc: F<C>, 
+>   ...
+> ) => F<[A, B, C, ...]>;
+> 
+> const sequenceS: <F, A, B, C, ...>(
+>   fs: { [fieldA]: F<A>, [fieldB]: F<B>, [fieldC]: F<C>, ... }
+> ) => F<{ [fieldA]: A, [fieldB]: B, [fieldC]: C, ... }>;
+> ```
+> 
+> To put it even more simply, `sequenceT`/`sequenceS` "swap" the type of `F` and type of tuple/record inside out:
+> 
+> - we had a tuple of `F`s → we get a `F` of a tuple,
+> - we had a record of `F`s → we get a `F` of a record.
 
 If we define our custom `Nullable` type and make it a higher-kinded type, we can get a type of order update, which is more familiar to non-FP developers:
 
