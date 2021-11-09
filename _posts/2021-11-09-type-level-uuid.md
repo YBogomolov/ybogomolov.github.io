@@ -29,7 +29,7 @@ UUID format is the following: `xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx`, with `M` r
 
 Unfortunately, TypeScript's strings, even literal ones, don't have `length` as a constant — it's just a `number`. So we need to implement this check using a recursive type with an accumulator. 
 
-I'm also defining a helper `Prev` to calculate previous number for a given one. It uses accessing tuple by index to get a *previous* number regarding the index — e.g., for `X = 5` it will get fifth element of a tuple, which is `4`. As the longest group of symbols in UUID has length of 12, so maximal number present in a tuple is `11`, and rest are `never`s:
+I'm also defining a helper `Prev` to calculate previous number for a given one. It uses accessing tuple by index to get a *previous* number regarding the index — e.g., for `X = 5` it will get sixth element of a tuple, which is `4`. As the longest group of symbols in UUID has length of 12, so maximal number present in a tuple is `11`, and rest are `never`s:
 
 ```ts
 type Prev<X extends number> =
