@@ -3,7 +3,7 @@ layout: post
 title:  "Compile-time validation of UUIDs"
 author: yuriy
 categories: [ typescript, uuid, type-level ]
-image: assets/images/uuid_example.png
+image: assets/images/uuid_cover.png
 ---
 
 In this post I show how to use TypeScript literal string template types to get a compile-time UUID validation.
@@ -80,4 +80,4 @@ type UUID<S extends string> = S extends NilUUID
 
 Time for some examples! Let's imagine we have a function which gets a user by its UUID. I don't really care about the implementation, so I'll just log that id. But you can clearly see that incorrect cases are rejected by the compiler, and correct ones are allowed:
 
-![Type-level UUID example](assets/images/uuid_example.png)
+![Type-level UUID example](/assets/images/uuid_example.png)
