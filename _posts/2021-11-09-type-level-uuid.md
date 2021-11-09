@@ -38,7 +38,7 @@ type Prev<X extends number> =
 type HasLength<S extends string, Len extends number> = [Len] extends [0]
     ? (S extends '' ? true : never)
     : (S extends `${infer C}${infer Rest}`
-        ? (C extends Char ? HasLength<Rest, Prev<Len>> : never)
+        ? (Lowercase<C> extends Char ? HasLength<Rest, Prev<Len>> : never)
         : never);
 ```
 
