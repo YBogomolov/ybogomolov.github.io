@@ -487,7 +487,7 @@ interface Monad<F extends URIS> {
 }
 ```
 
-This function states the following: "if you give me a function of type `A => F<B>`, and a variable of type `F<A>`, I can produce a value of type `F<B>` by "resolving" `F<A>` and providing it to `next`". For a TypeScript developer, the closes intuition will be callbacks or `Promise.then` (as a mental model, not as an example of a monad per se!).
+This function states the following: "if you give me a function of type `A => F<B>`, and a variable of type `F<A>`, I can produce a value of type `F<B>` by "resolving" `F<A>` and providing it to `next`". For a TypeScript developer, the closest intuition will be callbacks or `Promise.then` (as a mental model, not as an example of a monad per se!).
 
 Now, an indexed monad expands on a regular monad by adding three additional type parameters to `chain` — types `Input`, `Middle`, and `Output`:
 
