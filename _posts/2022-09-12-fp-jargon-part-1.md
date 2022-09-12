@@ -10,11 +10,9 @@ Functional programming infamously known for its cryptic math-like jargon: terms 
 
 <!--more-->
 
-# Functional Programming Jargon, Part 1
-
 Functional programming infamously known for its cryptic math-like jargon: terms like monads, monoids, functors and isomorphisms seems to be very intimidating for inexperienced developers. But if we take a look at those concepts as programming patterns, everything becomes much clearer. Let's take a look at those terms which you may encounter when using FP libraries like `fp-ts`, `effect-ts` or `sanctuary`, and code examples which illustrate them.
 
-## Algebraic Data Type (ADT)
+# Algebraic Data Type (ADT)
 
 We start with an _algebraic data types_. A data type is called _algebraic_ if it's composed of _product types_ (interfaces in TypeScript terminology) and _sum types_ (unions, enumerations). Here's an example of a small ADT:
 
@@ -39,17 +37,17 @@ Algebraic data types got their name due to their mathematical properties, and it
 
 Algebraic data types are the core tool of data modelling. The ultimate goal of data modelling in FP is to write so precise types that it's impossible to construct _bad data_. This is known as principle of [making illegal states unrepresentable](https://ybogomolov.me/making-illegal-states-unrepresentable), and I talked about it in my previous article.
 
-## Laws
+# Laws
 
 A special term you will encounter quite often is a _law_. A law is a special property which should hold for some type. For example, `Array.prototype.reverse` should hold a "double application identity law": `arr.reverse().reverse()` should be structurally equal to just `arr`, i.e. all elements should return to their places after a second reverse.
 
 > When you write your own functional structures and want to test that it holds some laws, it is good to use some property-based testing library to test your program on myriad of randomised inputs — for free! Are you interested in learning more about this kind of testing? Then keep an eye on this blog! ;-)
 
-## Domain and codomain of a function
+# Domain and codomain of a function
 
 A _domain_ of a function is a type of its argument. A _codomain_, correspondingly, is a type of its result. An example: for `f: (x: number) => string` its domain will be `number`, and its codomain will be `string`.
 
-## Injection, surjection, bijection
+# Injection, surjection, bijection
 
 These terms are rather rate, but they are tightly tied to terms "domain" and "codomain", and you still can meet them in some discussions, so I decided to showcase them as well.
 
@@ -71,7 +69,7 @@ Finally, a function which is _injective_ and _surjective_ simultaneously is call
 
 > What are `String.prototype.toUpperCase` and `String.prototype.toLowerCase`: injective, surjective, bijective, something else?
 
-## Morphism, endomorphism, isomorphism
+# Morphism, endomorphism, isomorphism
 
 _Morphism_ is a term originated from Category Theory, and applied to programming it means… just a function:
 
@@ -103,7 +101,7 @@ When you hear that "_X isomorphic to Y_", you can translate this as "_X is rever
 
 > An exercise for the curious ones: can functions `String.toLowerCase` and `String.toUpperCase` form an isomorphism? What about `Date.prototype.toISOString` and `new Date` constructor?
 
-## Natural transformation
+# Natural transformation
 
 A _natural transformation_ can be thought of as a function which can replace _type constructors_, and this time we will need to get some help from `fp-ts` and its notation of higher-order types. Please refer to [this article](https://ybogomolov.me/01-higher-kinded-types) to get better understanding how higher-order and higher-kinded types are implemented. The definition of a natural transformation can be written like this:
 
@@ -141,7 +139,7 @@ const arrayMapIsomorphism: NaturalIsomorphism<'Array', 'Map'> = {
 
 > Can you write a natural isomorphism between an `Array` and a `Set`? Which laws can you come up with for it?
 
-## Functor
+# Functor
 
 A _functor_ is also a term from Category Theory, and it means "structure-preserving mapping". Imagine `Array.prototype.map` function, or its equivalent for `Map` or `Tree`, plus add some laws, and you get yourself a functor! We cannot define a generic functor in pure TypeScript, but thanks to HKT notation of `fp-ts` we can write this definition:
 
