@@ -6,15 +6,15 @@ categories: [ fp, typescript, basics ]
 image: assets/images/fp-jargon-part-1.jpeg
 ---
 
-Functional programming infamously known for its cryptic math-like jargon: terms like monads, monoids, functors and isomorphisms seems to be very intimidating for inexperienced developers. But if we take a look at those concepts as programming patterns, everything becomes much clearer. In the first part of the series I will take a closer look at the most common terms from FP jargon.
+Functional programming is infamously known for its cryptic math-like jargon: terms like monads, monoids, functors and isomorphisms seem to be very intimidating for inexperienced developers. But if we take a look at those concepts as programming patterns, everything becomes much clearer. In the first part of the series, I will take a closer look at the most common terms from FP jargon.
 
 <!--more-->
 
-Functional programming infamously known for its cryptic math-like jargon: terms like monads, monoids, functors and isomorphisms seems to be very intimidating for inexperienced developers. But if we take a look at those concepts as programming patterns, everything becomes much clearer. Let's take a look at those terms which you may encounter when using FP libraries like `fp-ts`, `effect-ts` or `sanctuary`, and code examples which illustrate them.
+Functional programming is infamously known for its cryptic math-like jargon: terms like monads, monoids, functors and isomorphisms seem to be very intimidating for inexperienced developers. But if we take a look at those concepts as programming patterns, everything becomes much clearer. Let's take a look at those terms which you may encounter when using FP libraries like `fp-ts`, `effect-ts` or `sanctuary`, and code examples which illustrate them.
 
 # Algebraic Data Type (ADT)
 
-We start with an _algebraic data types_. A data type is called _algebraic_ if it's composed of _product types_ (interfaces in TypeScript terminology) and _sum types_ (unions, enumerations). Here's an example of a small ADT:
+We start with _algebraic data types_. A data type is called _algebraic_ if it's composed of _product types_ (interfaces in TypeScript terminology) and _sum types_ (unions, enumerations). Here's an example of a small ADT:
 
 ```ts
 // Product types — interfaces:
@@ -31,15 +31,15 @@ interface Just<T> {
 type Maybe<T> = Nothing | Just<T>;
 ```
 
-Algebraic data types got their name due to their mathematical properties, and it relates to _counting type inhabitants_. Product types — interfaces, or records, — got their name due to a fact that number of possible type inhabitants equal to a _product_ of inhabitants of each field. Say, type `{ foo: boolean, bar: boolean | null }` will have number of its inhabitants equal to 6 — 2 for `foo` times 3 for `bar`. Number of inhabitants for _sum types_, as you probably have already guessed, is equal to a _sum_ of inhabitants for each union member. Type `boolean | null` will have exactly 3 inhabitants: 2 for `boolean` plus 1 for `null`.
+Algebraic data types got their name due to their mathematical properties, and it relates to _counting type inhabitants_. Product types — interfaces, or records, — got their name because the number of possible type inhabitants is equal to the _product__ of inhabitants of each field. Say, type `{ foo: boolean, bar: boolean | null }` will have a number of its inhabitants equal to 6 — 2 for `foo` times 3 for `bar`. The number of inhabitants for _sum types_, as you probably have already guessed, is equal to the _sum_ of inhabitants for each union member. Type `boolean | null` will have exactly 3 inhabitants: 2 for `boolean` plus 1 for `null`.
 
 > These properties preserve even further. Here's a riddle for you: can you guess which data type corresponds to an exponent `A^B`?
 
-Algebraic data types are the core tool of data modelling. The ultimate goal of data modelling in FP is to write so precise types that it's impossible to construct _bad data_. This is known as principle of [making illegal states unrepresentable](https://ybogomolov.me/making-illegal-states-unrepresentable), and I talked about it in my previous article.
+Algebraic data types are the core tool of data modelling. The ultimate goal of data modelling in FP is to write so precise types that it's impossible to construct _bad data_. This is known as the principle of [making](https://ybogomolov.me/making-illegal-states-unrepresentable) illegal states unrepresentable](https://ybogomolov.me/making-illegal-states-unrepresentable), and I talked about it in my previous article.
 
 # Laws
 
-A special term you will encounter quite often is a _law_. A law is a special property which should hold for some type. For example, `Array.prototype.reverse` should hold a "double application identity law": `arr.reverse().reverse()` should be structurally equal to just `arr`, i.e. all elements should return to their places after a second reverse.
+A special term you will encounter quite often is _law_. Law is a special property which should hold for some type. For example, `Array.prototype.reverse` should hold a "double application identity law": `arr.reverse().reverse()` should be structurally equal to just `arr`, i.e. all elements should return to their places after a second reverse.
 
 > When you write your own functional structures and want to test that it holds some laws, it is good to use some property-based testing library to test your program on myriad of randomised inputs — for free! Are you interested in learning more about this kind of testing? Then keep an eye on this blog! ;-)
 
@@ -49,9 +49,9 @@ A _domain_ of a function is a type of its argument. A _codomain_, correspondingl
 
 # Injection, surjection, bijection
 
-These terms are rate, but they are tightly tied to terms "domain" and "codomain", and you still can meet them in some discussions, so I decided to showcase them as well.
+These terms are rate, but they are tightly tied to the terms "domain" and "codomain", and you still can meet them in some discussions, so I decided to showcase them as well.
 
-A function is _injective_, if each of elements from its domain is uniquely mapped to an element from its codomain. To put it simple, if no two elements from the domain are mapped to the same element from the codomain, then the function is injective (or "is an injection"):
+A function is _injective_ if each of the elements from its domain is uniquely mapped to an element from its codomain. To put it simply, if no two elements from the domain are mapped to the same element from the codomain, then the function is injective (or "is an injection"):
 
 ```ts
 const injection = (x: number): string => x.toString(); // no different two numbers are mapped to a same string
@@ -71,7 +71,7 @@ Finally, a function which is _injective_ and _surjective_ simultaneously is call
 
 # Morphism, endomorphism, isomorphism
 
-_Morphism_ is a term originated from Category Theory, and applied to programming it means… just a function:
+A _morphism_ is a term originated from Category Theory and applied to programming it means… just a function:
 
 ```ts
 type Morphism<A, B> = (a: A) => B;
@@ -85,7 +85,7 @@ type Endomorphism<A> = (a: A) => A;
 
 If you immediately thought of `identity` function, you are correct, but it's just a particular example of endomorphism. Functions like `String.prototype.toUpperCase`, or `Array.prototype.reverse` are examples of endomorphisms as well.
 
-You may also meet a term "isomorphism", or phrase "X isomorphic to Y". An _isomorphism_ is a function which has a _reverse_ operation. In TypeScript, isomorphism is usually modelled using a pair of functions, which hold together a law of information preserving:
+You may also meet the term "isomorphism", or the phrase "X isomorphic to Y". An _isomorphism_ is a function which has a _reverse_ operation. In TypeScript, isomorphism is usually modelled using a pair of functions, which hold together a law of information preserving:
 
 ```ts
 interface Isomorphism<A, B> {
@@ -103,7 +103,7 @@ When you hear that "_X isomorphic to Y_", you can translate this as "_X is rever
 
 # Natural transformation
 
-A _natural transformation_ can be thought of as a function which can replace _type constructors_, and this time we will need to get some help from `fp-ts` and its notation of higher-order types. Please refer to [this article](https://ybogomolov.me/01-higher-kinded-types) to get better understanding how higher-order and higher-kinded types are implemented. The definition of a natural transformation can be written like this:
+A _natural transformation_ can be thought of as a function which can replace _type constructors_, and this time we will need to get some help from `fp-ts` and its notation of higher-order types. Please refer to [this article](https://ybogomolov.me/01-higher-kinded-types) to get a better understanding of how higher-order and higher-kinded types are implemented. The definition of a natural transformation can be written like this:
 
 ```ts
 type NaturalTransformation<F, G> = <A>(fx: HKT<F, A>) => HKT<G, A>;
@@ -154,7 +154,7 @@ interface Functor<F> {
 
 > N.B.: I intentionally simplify these examples, because in `fp-ts` the `Functor` interface is defined for types of higher kinds — from 1-parameteric to 4-parametric, named `Functor1` to `Functor4`, correspondingly, plus one numberless which operates on `HKT` and not `KindX`. My examples show only interfaces with `HKT` to declutter the code.
 
-For a higher-order type — like our `Maybe` example from ADT section up above — we usually can define a functor:
+For a higher-order type — like our `Maybe` example from the ADT section up above — we usually can define a functor:
 
 ```ts
 // First we need to show fp-ts that Maybe is higher-order type:
@@ -183,8 +183,8 @@ const stringifyX = pipe(someX, maybeFunctor.map(n => n.toString())); // => { tag
 const stringifyY = pipe(someY, maybeFunctor.map(n => n.toString())); // => { tag: 'Nothing' }
 ```
 
-Functor is an example of a _type class_. I've talked about what is it and how to define them in [this article](https://ybogomolov.me/02-type-classes) — check it out!
+A functor is an example of a _type class_. I've talked about what is it and how to define them in [this article](https://ybogomolov.me/02-type-classes) — check it out!
 
 ---
 
-This is the first article of the series. In the next instalment we will get familiar with more complex terms — magmas, semigroups, monoids, rings and much more, so stay tuned!
+This is the first article of the series. In the next instalment, we will get familiar with more complex terms — magmas, semigroups, monoids, rings and much more, so stay tuned!
