@@ -49,7 +49,7 @@ A _domain_ of a function is a type of its argument. A _codomain_, correspondingl
 
 # Injection, surjection, bijection
 
-These terms are rather rate, but they are tightly tied to terms "domain" and "codomain", and you still can meet them in some discussions, so I decided to showcase them as well.
+These terms are rate, but they are tightly tied to terms "domain" and "codomain", and you still can meet them in some discussions, so I decided to showcase them as well.
 
 A function is _injective_, if each of elements from its domain is uniquely mapped to an element from its codomain. To put it simple, if no two elements from the domain are mapped to the same element from the codomain, then the function is injective (or "is an injection"):
 
