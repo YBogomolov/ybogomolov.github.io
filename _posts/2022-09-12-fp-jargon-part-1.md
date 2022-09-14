@@ -35,7 +35,7 @@ Algebraic data types got their name due to their mathematical properties, and it
 
 > These properties preserve even further. Here's a riddle for you: can you guess which data type corresponds to an exponent `A^B`?
 
-Algebraic data types are the core tool of data modelling. The ultimate goal of data modelling in FP is to write so precise types that it's impossible to construct _bad data_. This is known as the principle of [making](https://ybogomolov.me/making-illegal-states-unrepresentable) illegal states unrepresentable](https://ybogomolov.me/making-illegal-states-unrepresentable), and I talked about it in my previous article.
+Algebraic data types are the core tool of data modelling. The ultimate goal of data modelling in FP is to write so precise types that it's impossible to construct _bad data_. This is known as the principle of [making illegal states unrepresentable](https://ybogomolov.me/making-illegal-states-unrepresentable), and I talked about it in my previous article.
 
 # Laws
 
