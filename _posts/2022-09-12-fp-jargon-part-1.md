@@ -31,7 +31,7 @@ interface Just<T> {
 type Maybe<T> = Nothing | Just<T>;
 ```
 
-Algebraic data types got their name due to their mathematical properties, and it relates to _counting type inhabitants_. Product types — interfaces, or records, — got their name because the number of possible type inhabitants is equal to the _product__ of inhabitants of each field. Say, type `{ foo: boolean, bar: boolean | null }` will have a number of its inhabitants equal to 6 — 2 for `foo` times 3 for `bar`. The number of inhabitants for _sum types_, as you probably have already guessed, is equal to the _sum_ of inhabitants for each union member. Type `boolean | null` will have exactly 3 inhabitants: 2 for `boolean` plus 1 for `null`.
+Algebraic data types got their name due to their mathematical properties, and it relates to _counting type inhabitants_. Product types — interfaces, or records, — got their name because the number of possible type inhabitants is equal to the _product_ of inhabitants of each field. Say, type `{ foo: boolean, bar: boolean | null }` will have a number of its inhabitants equal to 6 — 2 for `foo` times 3 for `bar`. The number of inhabitants for _sum types_, as you probably have already guessed, is equal to the _sum_ of inhabitants for each union member. Type `boolean | null` will have exactly 3 inhabitants: 2 for `boolean` plus 1 for `null`.
 
 > These properties preserve even further. Here's a riddle for you: can you guess which data type corresponds to an exponent `A^B`?
 
