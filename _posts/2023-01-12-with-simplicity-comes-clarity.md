@@ -39,5 +39,7 @@ Right now, my Vault contains only three folders — `Base` for the core notes, `
 
 I am quite happy with what I learned — it was a bumpy road, but it gave me valuable experience and a deeper understanding of myself. The journey is not over yet, but the first time I feel confident in my knowledge management system.
 
-[^1]: a special set of pages prefixed with `0` or `00` that serve as hubs for other notes
+---
+
+[^1]: A special set of pages prefixed with `0` or `00` that serve as hubs for other notes
 [^2]: There's a subtle benefit of having files separated from notes: it's easier to do an emergency backup that should be small enough to be sent by email. Files are important, too, but the notes are what really matters.
