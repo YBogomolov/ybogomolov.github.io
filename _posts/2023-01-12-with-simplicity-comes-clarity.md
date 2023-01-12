@@ -10,9 +10,7 @@ I decided that I want to write not only about programming, but also about other 
 
 <!--more-->
 
-{% note %}
-With this short essay I want to begin a new page in my writing, challenging myself to write not only about programming but also about things that deeply interest me — education, knowledge management, leadership, team management, and so on. Hope you find these articles as useful and insightful as my writings about functional programming.
-{% endnote %}
+> With this short essay, I want to begin a new page in my writing, challenging myself to write not only about programming but also about things that deeply interest me — education, knowledge management, leadership, team management, and so on. Hope you find these articles as useful and insightful as my writings about functional programming.
 
 For years I was trying different methodologies of personal productivity, chasing the goal of becoming smarter and more efficient: David Allen's *[Getting Things Done](https://gettingthingsdone.com)*, [its variation](http://www.time-mngmnt.narod.ru) by Vasiliy Kislyi, *[Jedi Techniques](https://mnogosdelal.ru)* by Maxim Dorofeev, etc., etc., etc. All these methods at first felt like *the* solution, giving me a sense of boosted productivity and effectiveness. But after some time I unavoidably arrived at the conclusion that they bring nothing more than added complexity into my life. Only a few of them made their path into my habits, really, with [Inbox Zero](https://www.43folders.com/43-folders-series-inbox-zero) being the most prominent example.
 
