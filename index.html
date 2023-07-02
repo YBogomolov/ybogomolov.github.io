@@ -6,12 +6,16 @@ title: Home
 <div class="col-xxl-8">
     <div class="row flex-lg-row-reverse align-items-center g-5">
         <div class="col-4 d-none d-md-block">
-        <img src="{{ site.url }}/assets/images/Me.png" class="d-block mx-lg-auto img-fluid rounded-circle" alt="Yuriy Bogomolov" width="300" height="300" loading="lazy" />
+            <img src="{{ site.url }}/assets/images/Me.png" class="d-block mx-lg-auto img-fluid rounded-circle"
+                alt="Yuriy Bogomolov" width="300" height="300" loading="lazy" />
         </div>
         <div class="col-12 col-md-8">
-        <h1 class="display-5 fw-bold lh-1 mb-3">Yuriy Bogomolov's personal blog</h1>
-        <p class="lead">Hello, and welcome to my personal blog! I am a programmer passionate about functional programming, type theory and category theory.</p>
-        <p class="lead">I blog about functional programming in TypeScript, <a href="https://getmentor.dev/mentor/yuriy-bogomolov-452">perform mentoring</a> of developers who would like to study practical FP, and provide consultancy and architecture review for enterprises.</p>
+            <h1 class="display-5 fw-bold lh-1 mb-3">Yuriy Bogomolov's personal blog</h1>
+            <p class="lead">Hello, and welcome to my personal blog! I am a programmer passionate about functional
+                programming, type theory and category theory.</p>
+            <p class="lead">I blog about functional programming in TypeScript, <a
+                    href="{{ site.url }}/mentoring">perform mentoring</a> of developers who would like to study
+                practical FP, and provide consultancy and architecture review for enterprises.</p>
         </div>
     </div>
 </div>
@@ -22,20 +26,20 @@ title: Home
 
 <!-- Featured
 ================================================== -->
-    {% if featured_posts.size > 0 %}
+{% if featured_posts.size > 0 %}
 <section class="featured-posts">
     <div class="section-title">
         <h2><span>Featured Posts</span></h2>
     </div>
     <div class="row">
         {% for post in featured_posts %}
-          {% if post.featured == true %}
-            {% include featuredbox.html %}
-          {% endif %}
+        {% if post.featured == true %}
+        {% include featuredbox.html %}
+        {% endif %}
         {% endfor %}
     </div>
 </section>
-    {% endif %}
+{% endif %}
 {% endif %}
 
 <!-- Posts Index
@@ -46,7 +50,7 @@ title: Home
     </div>
     <div class="row listrecent">
         {% for post in paginator.posts %}
-            {% include postbox.html %}
+        {% include postbox.html %}
         {% endfor %}
     </div>
 </section>
@@ -54,9 +58,8 @@ title: Home
 <!-- Pagination
 ================================================== -->
 <div class="bottompagination">
-<div class="pointerup"><i class="fa fa-caret-up"></i></div>
-<span class="navigation" role="navigation">
-    {% include pagination.html %}
-</span>
+    <div class="pointerup"><i class="fa fa-caret-up"></i></div>
+    <span class="navigation" role="navigation">
+        {% include pagination.html %}
+    </span>
 </div>
-
