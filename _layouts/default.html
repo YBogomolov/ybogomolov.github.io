@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="icon" href="{{ site.baseurl }}/assets/images/logo.png">
+    <link rel="icon" href="{{ site.url }}/assets/images/logo.png">
 
     <title>{{ page.title }} | {{site.name}}</title>
 
@@ -20,9 +20,9 @@
     <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i"
         rel="stylesheet">
 
-    <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
+    <link href="{{ site.url }}/assets/css/screen.css" rel="stylesheet">
 
-    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
+    <link href="{{ site.url }}/assets/css/main.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -78,7 +78,7 @@
         <div class="container pr-0">
 
             <!-- Begin Logo -->
-            <a class="navbar-brand" href="{{ site.baseurl }}/">
+            <a class="navbar-brand" href="{{ site.url }}/">
                 <span class="text-logo">{{ site.name }}</span>
             </a>
             <!-- End Logo -->
@@ -100,7 +100,7 @@
                         {% else %}
                     <li class="nav-item">
                         {% endif %}
-                        <a class="nav-link" href="{{ site.baseurl }}/">Blog</a>
+                        <a class="nav-link" href="{{ site.url }}/">Blog</a>
                     </li>
 
                     {% if page.url == "/categories" %}
@@ -108,7 +108,15 @@
                         {% else %}
                     <li class="nav-item">
                         {% endif %}
-                        <a class="nav-link" href="{{ site.baseurl }}/categories">Categories</a>
+                        <a class="nav-link" href="{{ site.url }}/categories">Categories</a>
+                    </li>
+
+                    {% if page.url == "/mentoring" %}
+                    <li class="nav-item active">
+                        {% else %}
+                    <li class="nav-item">
+                        {% endif %}
+                        <a class="nav-link" href="{{ site.url }}/mentoring">Mentoring</a>
                     </li>
 
                     {% include search-lunr.html %}
@@ -137,7 +145,7 @@
 ================================================== -->
             <div class="alertbar">
                 <div class="container text-center">
-                    <span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a
+                    <span><img src="{{ site.url }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a
                         <b>story</b> from us, subscribe to our newsletter</span>
                     <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form"
                         class="wj-contact-form validate" target="_blank" novalidate>
@@ -182,9 +190,9 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
 
-    <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
+    <script src="{{ site.url }}/assets/js/mediumish.js"></script>
 
-    <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="{{ site.url }}/assets/js/ie10-viewport-bug-workaround.js"></script>
 
 </body>
 

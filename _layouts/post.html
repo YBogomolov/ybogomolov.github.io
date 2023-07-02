@@ -68,7 +68,7 @@ post_class: post-template
                     {% assign sortedCategories = page.categories | sort %}
                     {% for category in sortedCategories %}
                     <li>
-                        <a class="smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{
+                        <a class="smoothscroll" href="{{site.url}}/categories.html#{{ category | downcase }}">{{
                             category }}</a>
                     </li>
                     {% endfor %}

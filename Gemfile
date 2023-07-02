@@ -5,11 +5,14 @@ ruby RUBY_VERSION
 # When you want to use a different version, change it below, save the
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
 #
-#     bundle exec jekyll serve
+#     bundle exec jekyll serve --incremental
 #
 
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+gem "github-pages", "~> 228", group: :jekyll_plugins
+
 group :jekyll_plugins do
     gem 'jekyll-feed'
     gem 'jekyll-sitemap'

@@ -1,0 +1,13 @@
+.full-height {
+  min-height: 100vh;
+}
+
+.bg-black {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.offset-block {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

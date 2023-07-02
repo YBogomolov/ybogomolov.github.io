@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="icon" href="{{ site.url }}/assets/images/logo.png" />
+
+    <title>{{ page.title }} | {{site.name}}</title>
+
+    {% seo %}
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i"
+      rel="stylesheet"
+    />
+
+    <link href="{{ site.url }}/assets/css/screen.css" rel="stylesheet" />
+    <link href="{{ site.url }}/assets/css/landing.css" rel="stylesheet" />
+    <link href="{{ site.url }}/assets/css/main.css" rel="stylesheet" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+
+    <meta property="og:title" content="{{ page.title }}" />
+    {% if page.image %} <meta property="og:image" content="{% if page.image
+    contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{%
+    endif %}" /> {% endif %}
+    <meta property="og:description" content="{{ page.title }}" />
+    <meta property="og:url" content="{{ post.url | absolute_url }}" />
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
+
+      ym(84910399, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/84910399"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <meta name="yandex-verification" content="ccfdc43752e9444b" />
+  </head>
+
+  {% if jekyll.environment == 'production' %}
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i["GoogleAnalyticsObject"] = r;
+      (i[r] =
+        i[r] ||
+        function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        }),
+        (i[r].l = 1 * new Date());
+      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m);
+    })(
+      window,
+      document,
+      "script",
+      "//www.google-analytics.com/analytics.js",
+      "ga"
+    );
+    ga("create", "{{site.google_analytics}}", "auto");
+    ga("send", "pageview");
+  </script>
+  {% endif %} {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{%
+  endif %}{% endcapture %}
+
+  <body class="{{layout}}">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mediumnavigation nav-down"
+    >
+      <div class="container pr-0">
+        <!-- Begin Logo -->
+        <a class="navbar-brand" href="{{ site.url }}/">
+          <span class="text-logo">{{ site.name }}</span>
+        </a>
+        <!-- End Logo -->
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarMediumish"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+          <!-- Begin Menu -->
+
+          <ul class="navbar-nav ml-auto">
+            {% if page.url == "/" %}
+            <li class="nav-item active">{% else %}</li>
+
+            <li class="nav-item">
+              {% endif %}
+              <a class="nav-link" href="{{ site.url }}/">Blog</a>
+            </li>
+
+            {% if page.url == "/categories" %}
+            <li class="nav-item active">{% else %}</li>
+
+            <li class="nav-item">
+              {% endif %}
+              <a class="nav-link" href="{{ site.url }}/categories"
+                >Categories</a
+              >
+            </li>
+
+            {% if page.url == "/mentoring" %}
+            <li class="nav-item active">{% else %}</li>
+
+            <li class="nav-item">
+              {% endif %}
+              <a class="nav-link" href="{{ site.url }}/mentoring">Mentoring</a>
+            </li>
+
+            {% include search-lunr.html %}
+          </ul>
+
+          <!-- End Menu -->
+        </div>
+      </div>
+    </nav>
+
+    {{ content }}
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+              Copyright © 2019–{{ site.time | date: "%Y" }} Yuriy&nbsp;Bogomolov
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="{{ site.url }}/assets/js/mediumish.js"></script>
+
+    <script src="{{ site.url }}/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
