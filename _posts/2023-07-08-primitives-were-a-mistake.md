@@ -65,7 +65,7 @@ interface PaymentMethod {
 }
 ```
 
-I won't be stopping for long at IDs of various kinds — I've described why they have to be modelled as branded/opaque types in [[https://ybogomolov.me/making-illegal-states-unrepresentable]]. Instead, let's look at other `string`s — like those in the `ShippingAddress` interface — and I'll explain why each of them is **not** a `string`:
+I won't be stopping for long at IDs of various kinds — I've described why they have to be modelled as branded/opaque types in [Making Illegal States Unrepresentable](https://ybogomolov.me/making-illegal-states-unrepresentable) article. Instead, let's look at other `string`s — like those in the `ShippingAddress` interface — and I'll explain why each of them is **not** a `string`:
 - `street` is not a `string`, because street names cannot be empty (contain 0 characters), as well as they cannot be arbitrarily large (like "Lord Of The Rings" large). The longest street name in the world is **Laan van de landinrichtingscommissie Duiven-Westervoort** in Duiven, Netherlands. It has whopping 44 characters, but still, it is not _arbitrarily large_.
 - `city` is not a `string` either, using the same arguments. The longest city name in the world is **Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch**, or just Llanfair, in Wales. It is 58 characters long. Still not a `string`.
 - `country` is even more interesting. As of 2023, there are 196 countries in the world, with the longest name belonging to the **United Kingdom of Great Britain and Northern Ireland** (52 characters), and the shortest name belonging to **Oman** with 4 characters. IMO, this is not a case for a `string` — it is a call for a literal union[^1].
