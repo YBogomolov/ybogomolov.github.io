@@ -82,7 +82,7 @@ type URIS2 = keyof URItoKind2<unknown, unknown>; // sum type of names of all 2-a
 // and so on, as you desire
 
 type Kind<F extends URIS, A> = URItoKind<A>[F];
-type Kind2<F extends URIS2, A> = URItoKind2<A>[F];
+type Kind2<F extends URIS2, A, B> = URItoKind2<A, B>[F];
 // and so on
 ```
 
