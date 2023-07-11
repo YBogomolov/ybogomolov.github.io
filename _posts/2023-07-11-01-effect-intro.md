@@ -162,7 +162,7 @@ const program = Effect.gen(function* (_) {
   
   const doubleN = yield* _(doubleOption(n));
 
-  // You can even use your normal control flow statements here, unlike in Scala or Haskell, — how cool is that:
+  // You can even use your normal control flow statements here:
   if (doubleN % 2 === 0) {
     yield* _(Effect.log(`${doubleN} is even`));
   } else {
