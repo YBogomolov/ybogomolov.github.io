@@ -196,7 +196,7 @@ And, of course, as an `fp-ts`-inspired library, Effect supports an old way of do
 
 ```ts
 const program = pipe(
-  Effect.Do(),
+  Effect.Do,
   Effect.bind('n', () => Effect.succeed(Math.floor(Math.random() * 100))),
   Effect.bind('doubleN', ({ n }) => doubleOption(n)),
   Effect.bind('', ({ doubleN }) => {
