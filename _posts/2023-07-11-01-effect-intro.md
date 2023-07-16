@@ -10,6 +10,12 @@ Recently, [Effect](https://effect.website) has gained incredible traction in the
 
 <!--more-->
 
+Intro to Effect series:
+1. What is Effect?
+2. [Handling Errors](https://ybogomolov.me/02-effect-handling-errors)
+
+---
+
 Recently, [Effect](https://effect.website) has gained incredible traction in the functional programming community. While initially being a 1:1 port of [ZIO](https://zio.dev), it fully embraced the power of TypeScript and evolved in its own, unique way. With this post, I start a series of articles that will guide you, my reader, through all peculiarities of Effect.
 
 I expect my reader to be familiar with the basics of functional programming and the `fp-ts` library, as many concepts (like `pipe`ing functions or using type classes) are the same or very similar in Effect.
