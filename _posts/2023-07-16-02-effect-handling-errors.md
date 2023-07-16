@@ -264,4 +264,4 @@ And, of course, different schedules could be combined using `Schedule.union`, `S
 
 # Conclusion
 
-Prom my perspective, the key benefit of using Effect is modelling errors explicitly via custom types and handling them in a total, type-safe manner. Overall, Effect's error-handling model leads to safer code by forcing developers to handle failures in a comprehensive manner. The functional nature avoids mutation bugs, making it well-suited for mission-critical applications.
+From my perspective, the key benefit of using Effect is modelling errors explicitly via custom types and handling them in a total, type-safe manner. Overall, Effect's error-handling model leads to safer code by forcing developers to handle failures in a comprehensive manner. The functional nature avoids mutation bugs, making it well-suited for mission-critical applications.
