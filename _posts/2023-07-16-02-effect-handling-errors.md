@@ -26,7 +26,7 @@ There are two possible types of failures we as developers have to deal with:
 - *defects* — an unexpected error that we cannot recover from, such as running out of memory, or catching a `SIGKILL` signal;
 - *failure* — an error condition that represents a flaw in the program's logic, such as division by 0 or parsing a malformed JSON string.
 
-Effect deals only with the former, as tracking all defects is rather an impossible task. So let's add to our mental model of Effect that its `E` channel is used to track only *failures*. However, there are methods of partial recovery from defects present in Effect runtime.
+Effect deals only with the latter, as tracking all defects is rather an impossible task. So let's add to our mental model of Effect that its `E` channel is used to track only *failures*. However, there are methods of partial recovery from defects present in Effect runtime.
 
 # Reporting Failures
 
