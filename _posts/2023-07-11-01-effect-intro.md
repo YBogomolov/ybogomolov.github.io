@@ -13,6 +13,7 @@ Recently, [Effect](https://effect.website) has gained incredible traction in the
 Intro to Effect series:
 1. What is Effect?
 2. [Handling Errors](https://ybogomolov.me/02-effect-handling-errors)
+3. [Managing Dependencies](https://ybogomolov.me/03-effect-managing-dependencies)
 
 ---
 

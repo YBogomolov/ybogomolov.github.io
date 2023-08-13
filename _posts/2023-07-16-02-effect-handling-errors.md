@@ -13,6 +13,7 @@ One of the most important aspects of programming is finding a reliable way of de
 Intro to Effect series:
 1. [What is Effect?](https://ybogomolov.me/01-effect-intro)
 2. Handling Errors
+3. [Managing Dependencies](https://ybogomolov.me/03-effect-managing-dependencies)
 
 ---
 
