@@ -72,7 +72,7 @@ You can think of `Context` as a hashmap of `Tag -> Service implementation`. When
 
 Now, what if we want to create a service that is also dependent on another service? For example, a service for OpenSearch may be dependent on both an `Http` service and a `Cache` service, both of which depend on a `Prometheus` service to add some observability:
 
-```mermaid!
+```mermaid
 graph TD
   Base("Prometheus")
   S1("Http")
@@ -279,7 +279,7 @@ To make this more manageable, we will put those layers we've built to use.
 
 The power of layers hides in their composition. Recall the service structure that we've built as layers:
 
-```mermaid!
+```mermaid
 graph TD
   Base("PrometheusLive :: Layer#lt;never, never, Prometheus#gt;")
   L1("HttpLive :: Layer#lt;Prometheus, never, Http#gt;")
@@ -326,7 +326,7 @@ const MainLive = PrometheusLive.pipe(
 
 This could be visualised as:
 
-```mermaid!
+```mermaid
 flowchart TD
   subgraph Before ["Initial layer hierarchy"]
     direction TB

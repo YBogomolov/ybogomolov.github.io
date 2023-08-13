@@ -5,10 +5,29 @@
 
 /* We need to add display:inline in order to align the '>>' of the 'read more' link */
 .post-excerpt p {
-	display:inline;
+  display: inline;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-	"syntax"
-;
+@import "syntax";
+
+code.language-mermaid {
+  display: flex;
+  justify-content: center;
+}
+pre:has(code.language-mermaid),
+code.language-mermaid {
+  background-color: transparent;
+}
+.edgeLabel {
+  font-size: 92%;
+  opacity: 0.95;
+  color: #111;
+  padding: 0 3px;
+}
+.node rect {
+  stroke: #214f78 !important;
+}
+.nodeLabel {
+  color: #214f78 !important;
+}

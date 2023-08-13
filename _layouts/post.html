@@ -120,3 +120,9 @@ post_class: post-template
 {% endif %}
 <!--End Comments
 ================================================== -->
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.3.1/+esm'
+    mermaid.initialize({ startOnLoad: true, theme: 'neutral' })
+    await mermaid.run({ querySelector: 'code.language-mermaid' })
+</script>
