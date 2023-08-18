@@ -14,6 +14,7 @@ Intro to Effect series:
 1. [What is Effect?](https://ybogomolov.me/01-effect-intro)
 2. Handling Errors
 3. [Managing Dependencies](https://ybogomolov.me/03-effect-managing-dependencies)
+4. [Concurrency in Effect](https://ybogomolov.me/04-effect-concurrency)
 
 ---
 
