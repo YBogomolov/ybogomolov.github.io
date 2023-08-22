@@ -15,6 +15,7 @@ Intro to Effect series:
 2. [Handling Errors](https://ybogomolov.me/02-effect-handling-errors)
 3. Managing Dependencies
 4. [Concurrency in Effect](https://ybogomolov.me/04-effect-concurrency)
+5. [Software Transactional Memory in Effect](https://ybogomolov.me/05-effect-stm)
 
 ---
 

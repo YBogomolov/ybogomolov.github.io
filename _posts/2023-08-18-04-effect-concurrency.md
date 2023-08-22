@@ -15,6 +15,7 @@ Intro to Effect series:
 2. [Handling Errors](https://ybogomolov.me/02-effect-handling-errors)
 3. [Managing Dependencies](https://ybogomolov.me/03-effect-managing-dependencies)
 4. Concurrency in Effect
+5. [Software Transactional Memory in Effect](https://ybogomolov.me/05-effect-stm)
 
 Concurrency plays a vital role in many modern applications, enabling efficient utilisation of resources and improved responsiveness. To manage concurrency effectively, functional programming provides an abstraction called fibers, which simplifies handling concurrent and asynchronous operations. This article will introduce you to fibers and discuss their inherent features, as well as pave the way to explore various concurrency combinators. With fibers as the building blocks, you will gain a better understanding of how to model concurrency in your functional applications with ease. So, let's dive into the world of fibers and discover their potential in concurrent programming.
 
